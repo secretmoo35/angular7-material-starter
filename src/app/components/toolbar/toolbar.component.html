@@ -1,0 +1,8 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <mat-toolbar-row layout-padding>
+    <button *ngIf="isMenuIcon" padding-right mat-icon-button id="menu" (click)="sidenavService.openNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span padding>Angular7 Material</span>
+  </mat-toolbar-row>
+</mat-toolbar>

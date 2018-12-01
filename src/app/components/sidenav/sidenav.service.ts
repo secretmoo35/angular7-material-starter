@@ -9,7 +9,9 @@ export class SidenavService {
   constructor() { }
 
   public closeNav() {
-    this.appDrawer.close();
+    if (window.innerWidth <= 800) {
+      this.appDrawer.close();
+    }
   }
 
   public openNav() {

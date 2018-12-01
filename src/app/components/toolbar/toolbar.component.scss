@@ -1,4 +1,22 @@
 .mat-elevation-z6 {
-  position: fixed;
-  z-index: 999;
+    position: fixed;
+    z-index: 999;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.profile {
+    cursor: pointer;
+    img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 100%;
+        border: 2px solid #ffffff;
+    }
+    span {
+        font-size: 14px;
+    }
 }

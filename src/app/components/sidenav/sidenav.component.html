@@ -1,8 +1,17 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row layout-padding>
-    <span padding>Menu</span>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container class="class-elevation-z6">
-
+<mat-sidenav-container class="sidenav-container">
+  <div class="text-center">
+    <img src="./assets/profile.jpeg" class="menu-profile" alt="profile">
+    <p>Mr. John Doe</p>
+  </div>
+  <mat-list class="menu-list">
+    <h3 mat-subheader class="subheader">Menu</h3>
+    <mat-list-item class="menu-item" [ngClass]="{'menu-item-active': activeRoute === ''}" (click)="openPage('')">
+      <mat-icon mat-list-icon svgIcon="home-outline"></mat-icon>
+      <h4 mat-line>Home</h4>
+    </mat-list-item>
+    <mat-list-item class="menu-item" [ngClass]="{'menu-item-active': activeRoute === '/settings'}" (click)="openPage('/settings')">
+      <mat-icon mat-list-icon svgIcon="settings-outline"></mat-icon>
+      <h4 mat-line>Settings</h4>
+    </mat-list-item>
+  </mat-list>
 </mat-sidenav-container>

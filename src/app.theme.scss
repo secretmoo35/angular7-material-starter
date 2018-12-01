@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@include mat-core();
+// Global  variable 
+$primary:#69f0ae;
+$primary100:#dcfff7;
+$primary200:#87f1bd;
+$primary300:#5be6a2;
+$accent:#4fc3f7;
+$warn:#ff5722;
+$white:#ffffff;
+// mat variable 
+$my-primary:( 000: $primary, 100: $primary100, 200: $primary200, 300:$primary300, contrast: ( 000: $white, 100: $primary, 200: $primary, 300: $white));
+$my-accent:( 100: $accent, contrast: (100: $white));
+$my-warn:( 100: $warn, contrast: (100: $white));
+// use template
+$my-app-primary: mat-palette($my-primary, 000);
+$my-app-accent: mat-palette($my-accent, 100);
+$my-app-warn: mat-palette($my-warn, 100);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+// custom
+mat-icon[svgIcon] {
+    font-size: 0px !important;
+}

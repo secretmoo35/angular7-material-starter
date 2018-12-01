@@ -15,12 +15,14 @@ export class AppComponent implements AfterViewInit {
     public sidenavService: SidenavService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
-
   }
 
   ngAfterViewInit() {
     this.sidenavService.appDrawer = this.appDrawer;
     this.onResizeDisplay();
+    window.onresize = () => {
+      this.onResizeDisplay();
+    };
   }
 
   onResizeDisplay() {

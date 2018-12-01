@@ -1,8 +1,23 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
-  <mat-toolbar-row layout-padding>
-    <button *ngIf="isMenuIcon" padding-right mat-icon-button id="menu" (click)="sidenavService.openNav()">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button *ngIf="isMenuIcon" mat-icon-button (click)="sidenavService.openNav()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span padding>Angular7 Material</span>
+    <span class="pl-5" *ngIf="!isMenuIcon">Angular7 Material</span>
+    <span class="example-spacer"></span>
+
+
+    <div>
+      <span class="profile" [matMenuTriggerFor]="profile">
+        <img src="./assets/profile.jpeg">
+        <span>&nbsp; Mr. John Doe</span>
+      </span>
+      <mat-menu #profile="matMenu">
+        <button mat-menu-item>
+          <mat-icon svgIcon="lock-outline"></mat-icon>
+          <span>Log out</span>
+        </button>
+      </mat-menu>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

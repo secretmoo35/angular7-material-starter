@@ -1,15 +1,37 @@
-@media (max-width: 599px) {
-  .class-elevation-z6 {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-    height: calc(100vh - 56px) !important;
-    border-right: 1px solid #dcdcdc;
-  }
-}
-
-@media (min-width: 576px) {
-  .class-elevation-z6 {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-    height: calc(100vh - 64px);
-    border-right: 1px solid #dcdcdc;
-  }
+@import "../../../app.theme.scss";
+.sidenav-container {
+    background-color: map-get($map: $my-primary, $key: 000);
+    color: #ffffff !important;
+    .menu-profile {
+        margin: 30px 30px 20px 30px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+        border: 4px solid #ffffff;
+    }
+    .subheader {
+        color: #ffffff !important;
+    }
+    .menu-list {
+        background-color: $primary;
+        .menu-item {
+            color: #ffffff !important;
+            cursor: pointer;
+            -webkit-transition: background-color 300ms linear;
+            -ms-transition: background-color 300ms linear;
+            transition: background-color 300ms linear;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            width: 90%;
+            height: 45px;
+        }
+        .menu-item:hover {
+            background-color: map-get($map: $my-primary, $key: 200);
+        }
+        .menu-item-active {
+            background-color: map-get($map: $my-primary, $key: 100) !important;
+            color: map-get($map: $my-primary, $key: 000) !important;
+        }
+    }
 }
